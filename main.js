@@ -1,5 +1,4 @@
 // Function saludar
-
 function saludar() {
     let saludar = prompt("Hola! estamos contentos de que estes aqui, eres un cliente nuestro?")
     if (saludar === "si") {
@@ -12,46 +11,32 @@ function saludar() {
 //Llamado a function
 saludar();
 
-// While y Switch
 
-let nombre = (prompt("Ingrese su nombre"));
-
-while (nombre != "") {
-    switch (nombre) {
-        case "aye":
-            alert("Holiwis");
-            break;
-
-        default:
-            alert("Bienvenido" + " " + nombre);
-            break;
-    }
-
-    nombre = prompt("Ingrese su nombre")
-
-}
-
-// IF y ELSE
-
-let edad = parseInt(prompt("Ingrese su edad"));
-
-if (edad < 18) {
-    alert("No puedes ingresar");
-} else {
-    alert("Puedes ingresar, adelante.");
-    edad = prompt("Ingrese su edad")
-}
-
-// Function despedir
-
-function despedir() {
-    let despedir = prompt("Disfrutaste tu experiencia con nosotros?")
-    alert("Genial esperamos volverte a ver!")
+// Function pedir datos
+function pedirDatos() {
+    let apellido = prompt("Ingrese su apellido");
+    let nombre = prompt("Ingrese su nombre");
+    let edad = prompt("Ingrese su edad");
+    let mensaje = `El nombre completo y edad ingresados es:  ${apellido} ${nombre} ${edad}`;
+    alert(mensaje);
 }
 
 //Llamado a function
-despedir();
+pedirDatos();
 
+//Validacion de datos con WHILE
+let respuesta;
+let fuera = true
+while (fuera) {
+    respuesta = prompt("Sus datos ingresados son correctos?");
 
+    if (respuesta === "si") {
+        alert("Puedes continuar");
+        fuera = false;
+    } else {
+        alert("Vuelva a ingresar bien sus datos por favor")
+        pedirDatos();
+    }
+}
 
 
