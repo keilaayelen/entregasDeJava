@@ -16,7 +16,7 @@ saludar();
 function pedirDatos() {
     let apellido = prompt("Ingrese su apellido");
     let nombre = prompt("Ingrese su nombre");
-    let edad = prompt("Ingrese su edad");
+    let edad = Number(prompt("Ingrese su edad"));
     let mensaje = `El nombre completo y edad ingresados es:  ${apellido} ${nombre} ${edad}`;
     alert(mensaje);
 }
@@ -40,3 +40,21 @@ while (fuera) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+function despedir() {
+    let despedir = prompt("Disfrutaste tu experiencia con nosotros?")
+    alert("Genial esperamos volverte a ver!")
+}
+
+//Llamado a function
+despedir();
