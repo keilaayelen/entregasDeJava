@@ -101,7 +101,7 @@ let hembras = [
 function elegirGato() {
     let hembras = prompt("Quedan solo hembras, ponga que si para poder continuar");
     let color = prompt("Ingrese si quiere claro u oscuro su pelaje");
-    const nuevaEleccion = new Eleccion(hembras, color)
+    const nuevaEleccion = new ElegirHembra(hembras, color)
     arrayCarrito2.push(nuevaEleccion)
     alert("Adopcion en curso")
 }
