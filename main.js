@@ -120,53 +120,50 @@ class ElegirAlimento {
     }
 }
 
-let alimento = [
-    { alimento: "whyskas", precio: "3800" },
-    { alimento: "proplan", precio: "2500" },
-    { alimento: "purina", precio: "3000" },
-    { alimento: "catchow", precio: "4500" },
+let precios = [
+    { marca: "whyskas", precio: "3800" },
+    { marca: "proplan", precio: "2500" },
+    { marca: "purina", precio: "3000" },
+    { marca: "catchow", precio: "4500" },
 ]
 
-
-
-// Elegir comida
-function elegirAlimentos() {
-    let marca = prompt("Elige una marca entre las opciones \n 1: Whyskas \n 2: Proplan \n 3: Purina \n 4: Catchow");
-    let precio = prompt("Elige entre los siguientes valores \n 1: 3800 \n 2: 2500 \n 3: 3000 \n 4: 4500");
-    let kg = prompt("Elije si quieres de \n 1: 1kg \n 2: 5kg \n 3: 10kg \n 4: 15kg")
-    const compraAlimento = new ElegirAlimento(marca, precio, kg)
-    arrayCarrito3.push(compraAlimento)
-    alert("Compra en curso")
+function cargarAlimentos(){
+    let marca = prompt("Ingrese la marca, tenemos Whyskas, Proplan, Purina y Catchow");
+    let precio = prompt("Ingrese un valor, puede elegir entre 3800, 2500, 3000 y 4500");
+    let kg = prompt("Ingrese cuanto peso quiere, tenemos de 1kg, 10kg 15kg y 25kg con 5kg de regalo el ultimo.");
+    const nuevaCompra = new ElegirAlimento (marca, precio, kg)
+    arrayCarrito3.push(nuevaCompra)
+    alert ("Producto añadido al carrito")
 }
 
-let arrayCarrito3 = []
+cargarAlimentos();
 
-elegirAlimentos();
-
-
-//Ver que compro el cliente
 function verCompra() {
-    arrayCarrito3.forEach((eleCompra) => {
-        alert(`Usted eligio ${eleCompra.marca} con un precio de ${eleCompra.precio} y un peso de ${eleCompra.kg}`)
+    arrayCarrito3.forEach((elemento) => {
+        alert(`Usted eligio ${elemento.marca} con un precio de ${elemento.precio} y un peso de ${elemento.kg}`)
     })
 }
 
 verCompra();
 
+let arrayCarrito3 = []
 
-/* function despedir() {
+
+
+
+
+
+
+
+
+
+
+
+
+function despedir() {
     let despedir = prompt("Disfrutaste tu experiencia con nosotros?")
     alert("Genial esperamos volverte a ver!")
 }
 
 //Llamado a function
-despedir(); */
-
-
-
-
-
-
-
-
-/* Ingrese si quiere adoptar a \n 1: Lupa \n 2: Tana \n 3: Micha \n 4: Flora \n 5: Juana  */
+despedir();
