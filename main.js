@@ -110,14 +110,57 @@ let arrayCarrito2 = []
 
 elegirGato();
 
+// Elegir que alimento comprará
+class ElegirAlimento {
+    constructor(whyskas, proplan, purina, catchow,) {
+        this.whyskas = whyskas;
+        this.proplan = proplan;
+        this.purina = purina;
+        this.catchow = catchow;
+    }
+}
 
-function despedir() {
+let alimento = [
+    { alimento: "whyskas", precio: "3800" },
+    { alimento: "proplan", precio: "2500" },
+    { alimento: "purina", precio: "3000" },
+    { alimento: "catchow", precio: "4500" },
+]
+
+
+
+// Elegir comida
+function elegirAlimentos() {
+    let marca = prompt("Elige una marca entre las opciones \n 1: Whyskas \n 2: Proplan \n 3: Purina \n 4: Catchow");
+    let precio = prompt("Elige entre los siguientes valores \n 1: 3800 \n 2: 2500 \n 3: 3000 \n 4: 4500");
+    let kg = prompt("Elije si quieres de \n 1: 1kg \n 2: 5kg \n 3: 10kg \n 4: 15kg")
+    const compraAlimento = new ElegirAlimento(marca, precio, kg)
+    arrayCarrito3.push(compraAlimento)
+    alert("Compra en curso")
+}
+
+let arrayCarrito3 = []
+
+elegirAlimentos();
+
+
+//Ver que compro el cliente
+function verCompra() {
+    arrayCarrito3.forEach((eleCompra) => {
+        alert(`Usted eligio ${eleCompra.marca} con un precio de ${eleCompra.precio} y un peso de ${eleCompra.kg}`)
+    })
+}
+
+verCompra();
+
+
+/* function despedir() {
     let despedir = prompt("Disfrutaste tu experiencia con nosotros?")
     alert("Genial esperamos volverte a ver!")
 }
 
 //Llamado a function
-despedir();
+despedir(); */
 
 
 
