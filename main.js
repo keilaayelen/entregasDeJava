@@ -127,43 +127,61 @@ let precios = [
     { marca: "catchow", precio: "4500" },
 ]
 
-function cargarAlimentos(){
+function cargarAlimentos() {
     let marca = prompt("Ingrese la marca, tenemos Whyskas, Proplan, Purina y Catchow");
     let precio = prompt("Ingrese un valor, puede elegir entre 3800, 2500, 3000 y 4500");
-    let kg = prompt("Ingrese cuanto peso quiere, tenemos de 1kg, 10kg 15kg y 25kg con 5kg de regalo el ultimo.");
-    const nuevaCompra = new ElegirAlimento (marca, precio, kg)
-    arrayCarrito3.push(nuevaCompra)
-    alert ("Producto añadido al carrito")
+    let kg = prompt("Ingrese cuanto peso quiere, tenemos de 1kg, 10kg 15kg y 25kg con 5kg de regalo el ultimo.")
+    const compraste = new ElegirAlimento(marca, precio, kg)
+    arrayCarrito3.push(compraste)
+    alert("Producto agregado al carrito")
 }
 
-cargarAlimentos();
+let arrayCarrito3 = []
 
-function verCompra() {
+
+function visualizarCompra() {
     arrayCarrito3.forEach((elemento) => {
         alert(`Usted eligio ${elemento.marca} con un precio de ${elemento.precio} y un peso de ${elemento.kg}`)
     })
 }
 
-verCompra();
 
-let arrayCarrito3 = []
-
-
-
-
-
-
-
-
-
-
-
-
-
-function despedir() {
-    let despedir = prompt("Disfrutaste tu experiencia con nosotros?")
-    alert("Genial esperamos volverte a ver!")
+//Oferta del dia
+function mostrarOferta() {
+    const ofertas = precios.filter((food) => food.precio < 3000)
+    for (const oferta of ofertas) {
+        alert(`La oferta del dia de hoy es ${oferta.marca} a un valor de ${oferta.precio}`)
+    }
 }
 
-//Llamado a function
-despedir();
+//Finalizar compra
+function finalizarCompra() {
+    const total = arrayCarrito3.reduce ((acc, el)=> acc +el.precio, 0);
+    alert (`Gracias por su compra, el total a pagar es de ${total}`);
+}
+
+
+//Opciones de menu \
+let opcion = prompt("Ingrese una opcion; \n 1: Cargar productos \n 2: Mostrar oferta \n 3: Ver carrito \n 4: Finalizar compra \n 5: Salir");
+
+while (opcion !== "5") {
+    if (opcion === "1") {
+        cargarAlimentos(arrayCarrito)
+    }
+    if (opcion === "2") {
+        mostrarOferta();
+    }
+    if (opcion === "3") {
+        visualizarCompra();
+    }
+    if (opcion === "4") {
+        finalizarCompra();
+    }
+    opcion = prompt("Vuelva a ingresar una opcion por favor; \n 1: Seguir comprando \n 2: Mostrar oferta \n 3: Ver carrito \n 4: Finalizar compra \n 5: Salir")
+
+}
+alert("Gracias por tu adopcion responsable y la compra de nuestros productos");
+
+
+
+
